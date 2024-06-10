@@ -13,11 +13,13 @@ const loadTask = async () => {
   });
 }
 
+export const dynamic = 'force-dynamic';
+
 const HomePage = async ({ }) => {
   const tasks = await loadTask();
   return (
     <section className="container mx-auto">
-      <div className="grid grid-cols-4 gap-3 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-10">
         {tasks.map(task => (
             <TaskCard task={task} key={task.id} />
           ))

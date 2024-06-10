@@ -16,15 +16,15 @@ const TaskCard = ({ task }) => {
         }
     };
     return (
-        <div className="bg-slate-900 p-3 hover:bg-slate-800 hover:cursor-pointer"
+        <div className="bg-slate-900 p-4 rounded-lg shadow-md hover:bg-slate-800 hover:cursor-pointer"
             onClick={() =>
                 router.push('/tasks/edit/' + task.id)
             }>
             <h3 className="font-bold text-2xl mb-2">{task.title}</h3>
-            <p>{task.description}</p>
+            <p className='mb-2'>{task.description}</p>
             <p className={`font-bold ${getStatusColor(task.status)}`}>Estado : {task.status}</p>
-            <p>Prioridad : {task.priority}</p>
-            <p>{new Date(task.createdAt).toLocaleDateString()}</p>
+            <p className='mb-2'>Prioridad : {task.priority}</p>
+            <p className='text-sm text-gray-400'>{new Date(task.createdAt).toLocaleDateString()}</p>
         </div>
     );
 };
